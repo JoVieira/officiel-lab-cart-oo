@@ -16,11 +16,11 @@ public class CartServer implements Runnable {
 	private static final int PORT = 7222;
 
 	public static void main(String[] args) {
-		new CartServer().run();
+		new CartServer().run(PORT);
 	}
 
-	public void run() {
-		Server server = new Server(PORT);
+	public void run(int port) {
+		Server server = new Server(port);
 		ServletContextHandler contextHandler = new ServletContextHandler(server, "/");
 
 		// Configuration manuelle au lieu du package scanning
